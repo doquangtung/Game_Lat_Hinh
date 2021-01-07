@@ -17,15 +17,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 
 public class Delete {
+	private JFrame del;
+	private JLabel labeln;
+	private JLabel labels;
+	private JScrollPane dsAnh;
+	private JButton dButton;
 	public Delete() {
-	JFrame take = new JFrame("Delete");  
-	take.setSize(500, 300);  
-	take.setLocation(200, 200);  
-	take.setBackground(Color.lightGray);  
-	take.setLayout(new GridLayout(2, 1)); 
-	JLabel labeln = new JLabel("", JLabel.CENTER);
+	del = new JFrame("Delete");  
+	del.setSize(500, 300);  
+	del.setLocation(200, 200);  
+	del.setBackground(Color.lightGray);  
+	del.setLayout(new GridLayout(2, 1)); 
+	labeln = new JLabel("", JLabel.CENTER);
 	labeln.setLayout(new FlowLayout());
-	JLabel labels = new JLabel("", JLabel.CENTER);
+    labels = new JLabel("", JLabel.CENTER);
 	labels.setFont(new Font("Arial", Font.PLAIN, 25));
 	DefaultComboBoxModel Imode = new DefaultComboBoxModel();
 	File folder = new File("D:\\java\\PROJECT_I\\src");
@@ -41,10 +46,10 @@ public class Delete {
 	  }
 	JComboBox fruitCombo = new JComboBox(Imode);
     fruitCombo.setSelectedIndex(0);
-    JScrollPane fruitListScrollPane = new JScrollPane(fruitCombo);
-    fruitListScrollPane.setFont(new Font("Arial", Font.PLAIN, 25));
+    dsAnh = new JScrollPane(fruitCombo);
+    dsAnh.setFont(new Font("Arial", Font.PLAIN, 25));
     fruitCombo.setFont(new Font("Arial", Font.PLAIN, 25));
-        JButton dButton = new JButton("Delete");
+        dButton = new JButton("Delete");
         dButton.setFont(new Font("Arial", Font.PLAIN, 25));
         dButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -73,20 +78,19 @@ public class Delete {
         						} 
         					}
         			dele.delete();
-        			//labels.setText("delete successfully!");
-        		} else {
-        			
-        		}
+        		} 
         		}
             }
         });
     
-    labeln.add(fruitListScrollPane);
+    labeln.add(dsAnh);
     labeln.add(dButton);
-    take.add(labeln);
-    take.add(labels);
-	take.setLocationRelativeTo(null);
-	take.setResizable(false);
-	take.setVisible(true);  
+    del.add(labeln);
+    del.add(labels);
+	del.setLocationRelativeTo(null);
+	del.setResizable(false);
+	del.setVisible(true);  
 } 
 }
+
+

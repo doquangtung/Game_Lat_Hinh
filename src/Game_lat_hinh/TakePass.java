@@ -18,18 +18,22 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 public class TakePass {
-	JFrame take;
-	JButton find;
+	private JFrame take;
+	private JButton find;
+	private JTextField name;
+	private JLabel dn;
+	private JLabel labels;
+	private JScrollPane sp;
 	public TakePass() {
 	take = new JFrame("TAKE PASS");  
 	find = new JButton("find"); 
 	find.setFont(new Font("Arial", Font.PLAIN, 25));
 	JLabel namelabel = new JLabel("NAME: ", JLabel.RIGHT);
-	JLabel dn = new JLabel("", JLabel.CENTER);
+	dn = new JLabel("", JLabel.CENTER);
 	dn.setLayout(new FlowLayout()); 
 	//dn.setBounds(0, 10, 500, 100); 
 	namelabel.setFont(new Font("Arial", Font.PLAIN, 25));
-	JLabel labels = new JLabel("", JLabel.CENTER);
+	labels = new JLabel("", JLabel.CENTER);
 	labels.setFont(new Font("Arial", Font.PLAIN, 25));
 	//labels.setBounds(0, 110, 500, 90);
 	JTextField name = new JTextField(6);
@@ -62,7 +66,7 @@ public class TakePass {
     }
     JTable jt = new JTable(datas, column);
      //jt.setBounds(0, 200, 500, 490); 	 
-     JScrollPane sp = new JScrollPane(jt); 	    
+    sp = new JScrollPane(jt); 	    
 	dn.add(namelabel);
 	dn.add(name);
 	dn.add(find);

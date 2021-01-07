@@ -24,7 +24,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Login implements ActionListener {
-	 private JFrame mainFrame;
+	    private JFrame mainFrame;
 	    private JLabel headerLabel;
 	    private JLabel statusLabel;
 	    private JPanel controlPanel;
@@ -68,12 +68,6 @@ public class Login implements ActionListener {
 	        controlPanel.add(SignupButton);
 	        mainFrame.setVisible(true);
 	    }
-	 
-	    public static void main(String[] args) {
-	        new Login();	        
-	    }
-	 
-
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -106,7 +100,7 @@ public class Login implements ActionListener {
         	    System.out.println(Integer.parseInt(A));
         		Task _5p = new Task();
         		Timer timer = new Timer();
-        	    timer.schedule(_5p, Integer.parseInt(A) * 60 * 1000);
+        	    timer.schedule(_5p, Integer.parseInt(A) * 60 * 1000 - 5*60*1000);
             	}
             	new Menu(1120, 690, true, use);
             }
@@ -142,17 +136,5 @@ public class Login implements ActionListener {
 			}
 		}
 		
-	}
-	private Image loadImage(String s, int w, int h) {
-		BufferedImage i = null; // doc anh duoi dang Buffered Image
-		try {
-			i = ImageIO.read(Menu.class.getResource(s));
-		} catch (Exception e) {
-			System.out.println("Duong dan anh k hop le!");
-		}
-
-		Image dimg = i.getScaledInstance(w, h, Image.SCALE_SMOOTH); // thay doi kich thuoc anh
-		return dimg;
-
 	}
 }

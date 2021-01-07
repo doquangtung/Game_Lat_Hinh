@@ -55,12 +55,11 @@ public class Logic extends JFrame implements ActionListener{
 	int TIME[] =  {10, 20, 30, 50, 60, 80, 100, 120, 140, 150}; // tg moi man
 	int TIMEbonus[] = {1, 2, 3, 5, 6, 8, 10, 12, 14, 15};  //tg bonus moi man
 	int maxTime = 0, time = 0;  // max time moi man
-	int maxXY = 100;
 	int m, n ;//so cot/hang
 	private JProgressBar progressTime;
-	private JButton bt[][] = new JButton[maxXY][maxXY]; //cac button anh
-	private boolean tick[][] = new boolean[maxXY][maxXY]; //danh dau anh
-	private int anh[][] = new int[maxXY][maxXY]; //dia chi login cua anh
+	private JButton bt[][] = new JButton[100][100]; //cac button anh
+	private boolean tick[][] = new boolean[100][100]; //danh dau anh
+	private int anh[][] = new int[100][100]; //id cua anh
 	private JButton score_bt, score_bt2, sound, exit;
 	private JPanel pn, pn2;
 	private String use;
@@ -70,9 +69,9 @@ public class Logic extends JFrame implements ActionListener{
 	public Clip clip; 
 	private boolean isPlaySound;
 	private boolean IsHard;  //do kho
-	private boolean IsOne = true;  //do kho
-	JLabel turnP;
-	int turn = 0;
+	private boolean IsOne = true;  //sng choi
+	private JLabel turnP;
+	private int turn = 0;
 	
 	
 	public Logic(int k, int score, boolean playSound, boolean gamemode, String imagemode, String name) {
